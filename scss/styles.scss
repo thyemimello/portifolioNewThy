@@ -1,0 +1,244 @@
+@import '3-tools/bourbon/_bourbon.scss';
+@import '1-base/_breakpoints';
+@import '1-base/_variables';
+@import '1-base/_mixins';
+@import '1-base/_animations';
+@import '2-includes/_portfolio.scss';
+@import '2-includes/_nav.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+.main__container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include display(flex);
+    @include align-items(center);
+    &-svg__container {
+        width: 100%;
+        position: absolute;
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(center);
+        height: 100vh;
+        //background: rgba(255, 0, 0, 0.25);
+        .svg__container-svg {
+            width: 100%;
+            height: 60vh;
+            svg {
+                position: absolute;
+                width: 100%;
+                height: 60vh;
+                -webkit-animation: fadeInText 200ms ease-in-out;
+                animation: fadeInText 200ms ease-in-out;
+                //background: rgba(0, 0, 255, 0.35);
+                @include breakpoint(xs) {
+                    width: 120%;
+                }
+                .letter__path {
+                    stroke-dasharray: 6231 6233;
+                    stroke-dashoffset: 6232;
+                    fill: url(#img1);
+                    -webkit-animation: draw 1900ms ease-in-out 0ms forwards, fade 6.1s, fadeImg 6.1s;
+                    animation: draw 1900ms ease-in-out 0ms forwards, fade 6.1s, fadeImg 6.1s;
+                }
+            }
+        }
+    }
+    &-copy {
+        max-width: 300px;
+        position: relative;
+        height: 400px;
+        left: 10%;
+        h1 {
+            @include headlineStyles();
+            margin: 0;
+            @include position(absolute, 80px null null null);
+            animation: fadeInText 1.4s ease-in-out;
+            -webkit-animation: fadeInText 1.4s ease-in-out;
+            &:after {
+                content: 'FULL-STACK DEVELOPER';
+                font-family: $paragraphFont;
+                font-size: 16px;
+                width: 300px;
+                color: $grey;
+                position: absolute;
+                left: -3px;
+                bottom: -10px;
+                padding-left: 5px;
+                font-weight: 400;
+                letter-spacing: 3px;
+            }
+        }
+        p {
+            @include paragraphStyles();
+            max-width: 400px;
+            width: 350px;
+            @include position(absolute, null null 10px null);
+            animation: fadeInText 1.4s ease-in-out;
+            -webkit-animation: fadeInText 1.4s ease-in-out;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .main__copy-btn {
+            @include Button();
+            @include position(absolute, null null -50px null);
+            animation: fadeInText 1.4s ease-in-out;
+            -webkit-animation: fadeInText 1.4s ease-in-out;
+        }
+    }
+    &-social__links {
+        display: none;
+        position: absolute;
+        right: 20px;
+        text-align: center;
+        bottom: 20px;
+        width: 200px;
+        padding: 0;
+        animation: fadeInText 1.4s ease-in-out;
+        -webkit-animation: fadeInText 1.4s ease-in-out;
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            a {
+                width: 36px;
+                z-index: 1;
+                position: relative;
+                height: 36px;
+                display: block;
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+    &-email {
+        width: 100%;
+        height: 50px;
+        align-self: flex-end;
+        position: fixed;
+        bottom: 15px;
+        text-transform: uppercase;
+        &__link {
+            @include linkStyles();
+            letter-spacing: 0.5em;
+            width: 700px;
+            height: 25px;
+            line-height: 50px;
+            display: block;
+            margin: 0 auto;
+            &:hover {
+                letter-spacing: 0.70em;
+            }
+        }
+    }
+}
+
+.contact__container {
+    width: 150px;
+    height: 620px;
+    right: 0;
+    position: absolute;
+    margin: 75px auto;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInText 800ms ease-in-out;
+    -webkit-animation: fadeInText 800ms ease-in-out;
+    animation-delay: 1.7s;
+    animation-fill-mode: forwards;
+    p {
+        transform: rotate(90deg);
+        @include linkStyles();
+        position: relative;
+        right: 0;
+        &:hover {
+            letter-spacing: 1em;
+        }
+    }
+    span {
+        background: #222;
+        width: 1px;
+        height: 225px;
+        display: block;
+        margin: 150px auto;
+        animation: grow 2s cubic-bezier(.2, .9, 0, 1);
+        animation-delay: 1.7s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes grow {
+        0% {
+            height: 0;
+            display: none;
+        }
+        100% {
+            height: 225px;
+        }
+    }
+    ul {
+        display: block;
+        width: 100px;
+        height: auto;
+        margin: -120px auto;
+        list-style: none;
+        padding: 0;
+        li {
+            width: 18px;
+            height: 18px;
+            margin: 0 auto;
+            background: #222;
+            padding: 9px;
+            border-radius: 50%;
+            margin-top: 30px;
+            &:hover {
+                cursor: pointer;
+            }
+            a {
+                z-index: 1;
+                position: relative;
+            }
+        }
+    }
+}
+
+@include breakpoint(xxs) {
+    .main__container-svg__container,
+    .contact__container,
+    .main__container-email {
+        display: none;
+    }
+    .main__container-social__links {
+        display: block;
+        left: 0;
+        height: 0;
+        bottom: 50px;
+    }
+    .main__container-copy {
+        p {
+            width: 290px;
+            bottom: 100px;
+        }
+        h1 {
+            top: 0;
+        }
+        .main__copy-btn {
+            bottom: 40px;
+        }
+    }
+    .nav .nav__mobile {
+        display: block;
+    }
+}
