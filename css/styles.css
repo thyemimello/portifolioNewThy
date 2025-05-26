@@ -553,9 +553,9 @@ body {
   animation: draw 1900ms ease-in-out 0ms forwards, fade 6.1s, fadeImg 6.1s;
 }
 .main__container-copy {
-  max-width: 350px;
+  max-width: 450px;
   position: absolute;
-  right: 20%;
+  right: 5%;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -608,7 +608,7 @@ body {
 }
 .main__container-copy .main__copy-btn {
   border: 3px solid #5f2055;
-  width: 120px;
+  width: 170px;
   height: 40px;
   line-height: 40px;
   font-size: 14px;
