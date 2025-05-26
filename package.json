@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "build": "gulp sass",
+    "deploy": "vercel --prod"
   },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.0",
-    "gulp-sass": "^6.0.1"
+    "gulp-sass": "^6.0.1",
+    "sharp": "^0.32.1"
   },
   "dependencies": {
     "sass": "^1.89.0"

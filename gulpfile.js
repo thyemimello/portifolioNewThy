@@ -6,7 +6,7 @@ const browserSync = require("browser-sync").create();
 function compileSass() {
   return gulp
     .src("scss/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(gulp.dest("css"))
     .pipe(browserSync.stream());
 }
@@ -15,7 +15,7 @@ function compileSass() {
 function serve() {
   browserSync.init({
     server: "./",
-    port: 3001, // você escolheu essa porta
+    port: 3001,
   });
 
   gulp.watch("scss/**/*.scss", compileSass);
@@ -27,8 +27,16 @@ function watch() {
   gulp.watch("scss/**/*.scss", compileSass);
 }
 
+// Build task for production
+function build(done) {
+  compileSass();
+  done();
+}
+
 // Tarefas nomeadas
 exports.sass = compileSass;
+exports.build = build;
+exports.dev = gulp.series(compileSass, serve);
 exports.watch = watch;
 exports.serve = gulp.series(compileSass, serve);
 
