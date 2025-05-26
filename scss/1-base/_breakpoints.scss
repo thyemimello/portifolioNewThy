@@ -11,15 +11,15 @@
         @media (max-width: 768px) {
             @content;
         }
-    } @else if $class=1150 {
+    } @else if $class==1150 {
         @media (max-width: 1150px) {
             @content;
         }
-    } @else if $class=1250 {
+    } @else if $class==1250 {
         @media (max-width: 1250px) {
             @content;
         }
-    } @else if $class=1500 {
+    } @else if $class==1500 {
         @media (max-width: 1500px) {
             @content;
         }

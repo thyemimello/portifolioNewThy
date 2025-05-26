@@ -14,154 +14,213 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Playfair+Display:400" rel="stylesheet" />
-    <title>Rauno Freiberg | Portfolio</title>
+    <title>THYEMI MELLO | Portfolio</title>
 </head>
 
 <body>
 
-<nav class="nav">
-    <div class="nav__logo">
-        <span style="font-weight: bold">RAUNO</span> FREIBERG
+<nav class="nav">    <div class="nav__logo">
+        <span style="font-weight: bold">THYEMI</span> MELLO
     </div>
-    <a href="/" class="nav__link">HOME</a>
+    <a href="index.html" class="nav__link" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <span style="font-size: 18px;">&#8592;</span> HOME
+    </a>
     <div class="nav__mobile">
         <span class="strokes"></span>
         <span class="strokes"></span>
         <span class="strokes"></span>
     </div>
-    <div class="nav__mobile-fullscreen">
-        <ul>
+    <div class="nav__mobile-fullscreen">        <ul> 
             <li>
-                <a href="/">HOME</a>
+                <a href="index.html">HOME</a>
             </li>
 
             <li>
-                <a href="mailto:rauno@freiberg.tech">rauno@freiberg.tech</a>
+                <a href="mailto:desenvolvedora@thyemimello.tech">desenvolvedora@thyemimello.tech</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="card">
-    <div class="img blackford"></div>
-    <div class="card__content">
-        <h1>
-            Blackford
-        </h1>
-        <span class="card__content-separator"></span>
-        <p>
-            API based CRUD photo sharing SPA with JWT for authentication.
-        </p>
-        <p>
-            <span style="font-weight: bold; color: #111">Tech:</span>
-            Node.js, Express, Knex, PostgreSQL, Jest, Docker, React, Redux, CSS modules
-        </p>
-        <a href="https://github.com/raunofreiberg/blackford/" target="_blank">
-            <div class="card__content-btn">
-                SEE REPO
-            </div>
-        </a>
-    </div>
+<div class="card" style="
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto 60px auto;
+  gap: 0;
+">
+
+  <!-- IMAGEM - ocupa 50% da tela, colada na lateral esquerda -->
+  <div class="card__image" style="
+    flex: 1;
+    min-width: 30%;
+    height: auto;
+  ">
+    <img 
+      src="img/sqlagent.jpg" 
+      alt="Dashboard AgentSQL" 
+      style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 0;
+      ">
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="card__content" style="flex: 1; min-width: 320px; max-width: 450px; display: flex; flex-direction: column; justify-content: center;">
+    <h1 style="font-size: 32px; color: #5f2055; margin-bottom: 6px;">AgentSQL</h1>
+    <p style="font-weight: 500; color: #7a3b6b; margin-bottom: 18px;">
+      💡 Assistente inteligente para análise de dados empresariais com IA.
+    </p>    <p style="font-size: 16px; line-height: 1.6; color: #3c0f24; margin-bottom: 18px;">
+      <strong>Descrição:</strong><br>
+      O AgentSQL conecta uma LLM (IA) à base de dados da empresa via API. Com ele, gestores podem fazer perguntas em linguagem natural sobre vendas, faturamento, estoque ou métricas específicas. A IA interpreta a pergunta, consulta os dados automaticamente e retorna uma análise estratégica com comparações, resumos executivos e gráficos, de forma clara e visual.
+    </p>
+
+    <p style="font-size: 14px; color: #3c0f24; margin-bottom: 28px;">
+      <strong>Tecnologias:</strong> FastAPI · LangChain · PostgreSQL · OpenAI · Streamlit · Pandas
+    </p>    <a href="https://github.com/Agencia-Thype/slqAgents" target="_blank" style="align-self: center; text-decoration: none;">
+      <div style="padding: 12px 28px; border: 2px solid #5f2055; color: #5f2055; font-weight: bold; border-radius: 6px; text-align: center; display: inline-block; transition: 0.3s;" onmouseover="this.style.background='#5f2055'; this.style.color='#faf5f6';" onmouseout="this.style.background='transparent'; this.style.color='#5f2055';">
+        Repositório
+      </div>
+    </a>
+  </div>
 </div>
 
-<div class="card ribbon">
-    <div class="img kyrene"></div>
-    <div class="card__content">
-        <h1>
-            Kyrene
-        </h1>
-        <span class="card__content-separator"></span>
-        <p>
-            Platform to create cheatsheets with segments for personal use & sharing
-        </p>
-        <p>
-            <span style="font-weight: bold; color: #111">Tech:</span>
-            Golang, GraphQL, PostgreSQL, Docker, React, Apollo, Webpack, CSS modules, Flow
-        </p>
-        <a href="https://github.com/raunofreiberg/kyrene/" target="_blank">
-            <div class="card__content-btn">
-                SEE REPO
-            </div>
-        </a>
-    </div>
+
+
+<div class="card ribbon" style="
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  padding: 30px 0;
+  gap: 60px;
+">
+
+  <!-- IMAGEM -->
+  <div style="flex: 1; min-width: 320px; display: flex; justify-content: center;">
+    <img 
+      src="../../img/appCiclica.png" 
+      alt="AgentCicle App" 
+      style="
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      ">
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="card__content" style="flex: 1.2; min-width: 380px; max-width: 620px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1 style="font-size: 36px; color: #5f2055; margin-bottom: 10px;">AgentSQL</h1>
+    
+    <p style="font-size: 18px; font-weight: 500; color: #7a3b6b; margin-bottom: 24px;">
+      Aplicativo de bem-estar feminino com IA integrada.
+    </p>
+
+    <p style="font-size: 17px; line-height: 1.8; color: #3c0f24; margin-bottom: 24px;">
+      <strong>Descrição:</strong><br>
+      O AgentCicle é um projeto full stack que acompanha o ciclo menstrual, treinos e emoções. Desenvolvido com <strong>backend em Python (FastAPI)</strong> e banco de dados <strong>PostgreSQL</strong>, o app utiliza <strong>Inteligência Artificial via OpenAI</strong> para recomendar treinos personalizados, conteúdos educativos e mensagens motivacionais de acordo com a fase do ciclo. Promove bem-estar, autocuidado e equilíbrio com uma abordagem acolhedora e inteligente.
+    </p>
+
+    <p style="font-size: 15px; color: #3c0f24; margin-bottom: 32px;">
+      <strong>Tecnologias:</strong> React Native · Expo · TypeScript · FastAPI (Python) · PostgreSQL · OpenAI API
+    </p>
+
+    <a href="https://github.com/Agencia-Thype/agentcicle" target="_blank" style="text-decoration: none;">
+      <div style="padding: 12px 28px; border: 2px solid #5f2055; color: #5f2055; font-weight: bold; border-radius: 6px; text-align: center; display: inline-block; transition: 0.3s;"
+        onmouseover="this.style.background='#5f2055'; this.style.color='#faf5f6';"
+        onmouseout="this.style.background='transparent'; this.style.color='#5f2055';">
+        Repositório
+      </div>
+    </a>
+  </div>
 </div>
 
-<div class="card">
-    <div class="img css__grid"></div>
-    <div class="card__content">
-        <h1>
-            CSS Grid Workshop
-        </h1>
-        <span class="card__content-separator"></span>
-        <p>
-            Presentation/workshop about CSS grid
-        </p>
-        <p>
-            <span style="font-weight: bold; color: #111"> Tech:</span> Spectacle, React, CSS grid
-        </p>
-        <a href="https://raunofreiberg.com/css-grid-workshop/#/" target="_blank">
-            <div class="card__content-btn">
-                SEE LIVE
-            </div>
-        </a>
-    </div>
+<div class="card ribbon" style="
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  padding: 10px 0;
+  gap: 30px;
+">
+
+  <!-- VÍDEO -->
+  <!-- VÍDEO COM BORDA À ESQUERDA E CENTRALIZADO -->
+<div style="flex: 1; min-width: 320px; display: flex; justify-content: center; align-items: center; padding-left: 38px;">
+  <video 
+    src="../../videos/mediaChat.mp4"
+    autoplay 
+    loop 
+    muted 
+    playsinline
+    style="
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+    ">
+    Seu navegador não suporta vídeos.
+  </video>
 </div>
 
-<!--<div class="card">
-    <div class="img rein"></div>
-    <div class="card__content">
-        <h1>
-            Rein
-        </h1>
-        <span class="card__content-separator"></span>
-        <p>
-            Funnily enough, this one is named after my father who is an avid, old-school,
-            DVD-loving type of guy who has lots of movies. To make his life more bearable, I figured
-            I'd do him justice and build a simple movie sorting web app.
-        </p>
-        <p>
-            <span style="font-weight: bold; color: #111"> Tech:</span> Python, Django, React, Redux, Docker, PostgreSQL
-        </p>
-        <a href="https://github.com/raunofreiberg/rein/" target="_blank">
-            <div class="card__content-btn">
-                SEE REPO
-            </div>
-        </a>
-    </div>
-</div>-->
 
-<div class="card">
-    <div class="img bloomfield"></div>
-    <div class="card__content">
-        <h1>
-            Bloomfield
-        </h1>
-        <span class="card__content-separator"></span>
-        <p>
-            React & Redux chatroom using Firebase API as the back-end.
-        </p>
-        <p>
-            <span style="font-weight: bold; color: #111"> Tech:</span> React, Redux, Firebase, Webpack, Docker
-        </p>
-        <a href="https://github.com/raunofreiberg/bloomfield/" target="_blank">
-            <div class="card__content-btn">
-                SEE REPO
-            </div>
-        </a>
-    </div>
+  <!-- CONTEÚDO -->
+  <div class="card__content" style="flex: 1.2; min-width: 380px; max-width: 620px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1 style="font-size: 36px; color: #5f2055; margin-bottom: 10px;">Webhook WhatsApp com IA</h1>
+    
+    <p style="font-size: 18px; font-weight: 500; color: #7a3b6b; margin-bottom: 24px;">
+      🤖 Assistente inteligente via WhatsApp
+    </p>
+
+    <p style="font-size: 17px; line-height: 1.8; color: #3c0f24; margin-bottom: 24px;">
+      <strong>Descrição:</strong><br>
+      API desenvolvida em <strong>Python com FastAPI</strong> que conecta um número de WhatsApp Business a uma IA capaz de interpretar áudios e textos. A aplicação realiza buscas por <strong>ID do cliente</strong>, registra o histórico completo de conversas em banco de dados, e responde de forma personalizada utilizando a <strong>OpenAI</strong>.
+      <br><br>
+      Com integração ao sistema <strong>Webhook_Copiloto</strong>, ela permite atendimento humanizado, automatizado e com memória de contexto, ideal para suporte ao cliente, vendas e automações. O projeto também conta com controle de sessões, tokens, e persistência via banco de dados relacional.
+    </p>
+
+    <p style="font-size: 15px; color: #3c0f24; margin-bottom: 32px;">
+      <strong>Tecnologias:</strong> FastAPI · Python · PostgreSQL · OpenAI API · PM2 · Docker · WhatsApp Business API (Baileys) · Render
+    </p>
+
+    <a href="https://github.com/thyemimello/webhook_copiloto">
+      <div style="padding: 12px 28px; border: 2px solid #5f2055; color: #5f2055; font-weight: bold; border-radius: 6px; text-align: center; display: inline-block; transition: 0.3s;"
+        onmouseover="this.style.background='#5f2055'; this.style.color='#faf5f6';"
+        onmouseout="this.style.background='transparent'; this.style.color='#5f2055';">
+        Repositório
+      </div>
+    </a>
+  </div>
+</div>
+
+
+
+  
+    </a>
+  </div>
 </div>
 
 
 <div class="portfolio__footer">
     <h1>
-        Plenty more where that came from..
-    </h1>
-    <a href="https://github.com/raunofreiberg/" target="_blank">
-        <div class="portfolio__footer-btn">
-            SEE GITHUB
+        Veja mais projetos em meu GitHub...
+    </h1>    <a href="https://github.com/thyemimello/" target="_blank">
+        <div class="portfolio__footer-btn" onmouseover="this.style.background='#5f2055'; this.style.color='#faf5f6';" onmouseout="this.style.background='transparent'; this.style.color='#5f2055';">
+            Ver GitHub
         </div>
     </a>
-    <a href="mailto:rauno@freiberg.tech" class="main__container-email__link">rauno@freiberg.tech</a>
+    <a href="mailto:desenvolvedora@thyemimello.tech" class="main__container-email__link">desenvolvedora@thyemimello.tech</a>
 </div>
 <script src="js/main.js"></script>
 </body>

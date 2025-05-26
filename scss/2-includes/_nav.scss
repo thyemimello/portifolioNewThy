@@ -36,9 +36,8 @@
     animation: fadeInText 1.4s ease-in-out;
     -webkit-animation: fadeInText 1.4s ease-in-out;
     display: none;
-    z-index: 3;
-    .strokes {
-        background: #222;
+    z-index: 3;    .strokes {
+        background: $purple-dark;
         width: 24px;
         height: 2px;
         display: block;
@@ -55,11 +54,11 @@
     }
     .animate0 {
         transform: rotate(45deg) translateY(3px);
-        background: #fff !important;
+        background: $off-white !important;
     }
     .animate2 {
         transform: rotate(-45deg) translateY(-13px) translateX(10px);
-        background: #fff !important;
+        background: $off-white !important;
     }
 }
 
@@ -85,7 +84,7 @@
 
 .nav__mobile-fullscreen.show {
     display: block;
-    background-color: #171616;
+    background-color: $purple-very-dark;
     z-index: 1;
     position: fixed;
     animation: slideIn 0.2s ease-in-out;

@@ -42,57 +42,54 @@ body {
                 //background: rgba(0, 0, 255, 0.35);
                 @include breakpoint(xs) {
                     width: 120%;
-                }
-                .letter__path {
-                    stroke-dasharray: 6231 6233;
-                    stroke-dashoffset: 6232;
+                }                .letter__path {                    stroke-dasharray: 3000;                    stroke-dashoffset: 3000;
                     fill: url(#img1);
+                    font-family: 'Great Vibes', cursive;
+                    font-size: 700px;
                     -webkit-animation: draw 1900ms ease-in-out 0ms forwards, fade 6.1s, fadeImg 6.1s;
                     animation: draw 1900ms ease-in-out 0ms forwards, fade 6.1s, fadeImg 6.1s;
                 }
             }
-        }
-    }
-    &-copy {
-        max-width: 300px;
-        position: relative;
-        height: 400px;
-        left: 10%;
-        h1 {
+        }    }    &-copy {        max-width: 450px;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;h1 {
             @include headlineStyles();
-            margin: 0;
-            @include position(absolute, 80px null null null);
+            margin: 0 0 15px 0;
             animation: fadeInText 1.4s ease-in-out;
             -webkit-animation: fadeInText 1.4s ease-in-out;
-            &:after {
-                content: 'FULL-STACK DEVELOPER';
-                font-family: $paragraphFont;
-                font-size: 16px;
-                width: 300px;
-                color: $grey;
-                position: absolute;
-                left: -3px;
-                bottom: -10px;
-                padding-left: 5px;
-                font-weight: 400;
-                letter-spacing: 3px;
-            }
+            text-align: left;
         }
-        p {
-            @include paragraphStyles();
-            max-width: 400px;
-            width: 350px;
-            @include position(absolute, null null 10px null);
+
+        .subtitle {
+            font-family: $paragraphFont;
+            font-size: 16px;
+            color: $grey;
+            font-weight: 400;
+            letter-spacing: 3px;            text-align: left;
+            margin: 0 0 35px 0;
             animation: fadeInText 1.4s ease-in-out;
             -webkit-animation: fadeInText 1.4s ease-in-out;
+        }        p {
+            @include paragraphStyles();
+            max-width: 450px;
+            width: 100%;
+            margin: 0 0 25px 0;
+            animation: fadeInText 1.4s ease-in-out;
+            -webkit-animation: fadeInText 1.4s ease-in-out;            text-align: left;
+            font-size: 0.95em;
         }
         a {
             text-decoration: none;
             color: inherit;
-        }
-        .main__copy-btn {
+        }        .main__copy-btn {
             @include Button();
-            @include position(absolute, null null -50px null);
+            margin: 0;
             animation: fadeInText 1.4s ease-in-out;
             -webkit-animation: fadeInText 1.4s ease-in-out;
         }
@@ -125,14 +122,14 @@ body {
                 }
             }
         }
-    }
-    &-email {
+    }    &-email {
         width: 100%;
         height: 50px;
         align-self: flex-end;
         position: fixed;
         bottom: 15px;
-        text-transform: uppercase;
+        text-transform: lowercase;
+        font-style: italic;
         &__link {
             @include linkStyles();
             letter-spacing: 0.5em;
@@ -168,9 +165,8 @@ body {
         &:hover {
             letter-spacing: 1em;
         }
-    }
-    span {
-        background: #222;
+    }    span {
+        background: $purple-dark;
         width: 1px;
         height: 225px;
         display: block;
@@ -194,12 +190,11 @@ body {
         height: auto;
         margin: -120px auto;
         list-style: none;
-        padding: 0;
-        li {
+        padding: 0;        li {
             width: 18px;
             height: 18px;
             margin: 0 auto;
-            background: #222;
+            background: $purple-dark;
             padding: 9px;
             border-radius: 50%;
             margin-top: 30px;
@@ -225,20 +220,41 @@ body {
         left: 0;
         height: 0;
         bottom: 50px;
-    }
-    .main__container-copy {
+    }    .main__container-copy {
+        max-width: 95vw;
+        width: 95vw;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 2vw;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        
         p {
             width: 290px;
-            bottom: 100px;
+            margin: 40px auto 30px auto;
+            text-align: center;
+        }        h1 {
+            margin: 0 auto 15px auto;
+            text-align: center;
         }
-        h1 {
-            top: 0;
+        .subtitle {
+            text-align: center;
+            margin: 0 auto 25px auto;
         }
         .main__copy-btn {
-            bottom: 40px;
+            margin: 10px auto 0 auto;
         }
     }
     .nav .nav__mobile {
         display: block;
     }
+}
+
+/* Great Vibes font class */
+.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 550;
+    font-style: normal;
 }

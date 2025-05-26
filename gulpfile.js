@@ -1,35 +1,37 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var browserSync = require("browser-sync").create();
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const browserSync = require("browser-sync").create();
 
-gulp.task("sass", () => {
-  gulp
+// Compilar SCSS
+function compileSass() {
+  return gulp
     .src("scss/**/*.scss")
-    .pipe(sass())
-    .on("error", (err) => {
-      console.log(err.toString());
-
-      this.emit("end");
-    })
+    .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("css"))
     .pipe(browserSync.stream());
-});
+}
 
-// Static Server + watching scss/html files
-gulp.task("serve", ["sass"], () => {
+// Servidor + watch
+function serve() {
   browserSync.init({
     server: "./",
-    port: 3001, // Changed port from 3000 to 3001
+    port: 3001, // você escolheu essa porta
   });
 
-  gulp.watch("scss/**/*.scss", ["sass"]);
+  gulp.watch("scss/**/*.scss", compileSass);
   gulp.watch("*.html").on("change", browserSync.reload);
-});
+}
 
-gulp.task("watch", () => {
-  gulp.watch("scss/**/*.scss", ["sass"]);
-});
+// Watch isolado (opcional)
+function watch() {
+  gulp.watch("scss/**/*.scss", compileSass);
+}
 
-// define the default gulp task
-gulp.task("default", ["sass", "watch"]);
-gulp.task("dev", ["serve"]);
+// Tarefas nomeadas
+exports.sass = compileSass;
+exports.watch = watch;
+exports.serve = gulp.series(compileSass, serve);
+
+// Default
+exports.default = gulp.series(compileSass, watch);
+exports.dev = exports.serve;
